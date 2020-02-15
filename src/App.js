@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import Table from './components/Table'
 import './index.css'
 
-class App extends Component {
-  render() {
-    const characters = [
+class App extends Component
+{
+  state = {
+    characters: [
       {
         name: 'Charlie',
         job: 'Janitor',
@@ -21,10 +22,13 @@ class App extends Component {
         name: 'Dennis',
         job: 'Bartender',
       },
-    ]
+    ],
+  }
+  render() {
+    
     return (
       <div className="container">
-        <Table characterData={characters}></Table>
+        <Table characterData={this.state.characters}></Table>
       </div>
     )
   }
