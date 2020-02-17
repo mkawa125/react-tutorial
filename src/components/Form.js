@@ -44,7 +44,7 @@ render() {
         name="job"
         id="job"
         value={job}
-              onChange={ this.handleChange } />
+        onChange={ this.handleChange } />
           
           <input type="button" value="Submit" onClick={this.submitForm} />
     </form>
