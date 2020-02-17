@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Table from './components/Table';
-import Form  from "./components/Form";
+import Form from "./components/Form";
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css'
 
 class App extends Component

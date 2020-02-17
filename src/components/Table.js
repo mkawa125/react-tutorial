@@ -33,7 +33,7 @@ class Table extends Component
     {
         const {characterData, removeCharacter} = this.props
         return (
-          <table>
+          <table className = "table table-hover table-sm table-bordered">
             <TableHeader/>
             <TableBody characterData = {characterData} removeCharacter={removeCharacter}></TableBody>
           </table>
