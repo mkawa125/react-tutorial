@@ -36,6 +36,7 @@ render() {
         type="text"
         name="name"
         id="name"
+        className="form-control"
         value={name}
         onChange={this.handleChange} />
       <label for="job">Job</label>
@@ -43,10 +44,11 @@ render() {
         type="text"
         name="job"
         id="job"
+        className="form-control"
         value={job}
         onChange={ this.handleChange } />
           
-          <input type="button" value="Submit" onClick={this.submitForm} />
+          <button className="btn btn-sm btn-success" type="button" value="Submit" onClick={this.submitForm}> Submit</button>
     </form>
   );
 }
