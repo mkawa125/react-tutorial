@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Table from './components/Table';
-import Form from "./components/Form";
+import { Router } from 'react-router';
+import history from './services/history';
+import Routes from './routes';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css'
 
@@ -22,12 +23,10 @@ class App extends Component
   this.setState({ characters: [...this.state.characters, character] })
 }
   render() {
-    const { characters } = this.state
     return (
-      <div className="container">
-        <Table characterData={ characters } removeCharacter={ this.removeCharacter }></Table>
-        <Form handleSubmit={this.handleSubmit} ></Form>
-      </div>
+      <Router history={history}>
+      <Routes />
+    </Router>
     )
   }
 }
