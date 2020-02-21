@@ -11,6 +11,7 @@ class Header extends Component
                     <li>Dashboard</li>
                     <li>Documentation</li>
                 </ul>
+                {this.props.children}
             </div>
         );
     }
