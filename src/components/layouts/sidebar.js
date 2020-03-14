@@ -11,12 +11,14 @@ render() {
 
     <ul className="nav">
 
+              <li className="nav-title">Users </li>
+
         <li className="nav-item">
-           <Link to="/">Mkawa</Link>
+           <Link className="nav-link" to="/">Mkawa</Link>
         </li>
 
         <li className="nav-item">
-           <Link to="/">Mkawa</Link>
+           <Link  to="/">Mkawa</Link>
         </li>
 
         <li className="nav-item">

@@ -10,7 +10,7 @@ class Header extends Component
     render(){
         return (
             <header className="app-header navbar">
-                Coding community
+                Online Coding community
             <button className="d-none d-lg-inline navbar-toggler sidebar-toggler"
                     type="button"
                     data-toggle="sidebar-lg-show">
