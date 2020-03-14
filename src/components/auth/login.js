@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import '../../public/auth.css'
 
 class Login extends Component {
   constructor(props) {
@@ -32,6 +33,7 @@ render() {
     return (
       
         <div className='col-md-4 offset-4'>
+            <div className="login-box">
             <form>
                 <label for="name">Username or email</label>
                 <input
@@ -54,6 +56,7 @@ render() {
                     
                     <button className="btn btn-sm btn-primary" type="button" value="Submit" onClick={this.submitForm}> Login</button>
                 </form>
+                </div>
         </div>
     
   );
