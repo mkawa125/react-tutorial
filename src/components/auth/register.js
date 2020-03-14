@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Form extends Component {
+class Register extends Component {
   constructor(props) {
     super(props)
 
@@ -48,9 +48,9 @@ render() {
         value={job}
         onChange={ this.handleChange } />
           
-          <button className="btn btn-sm btn-success" type="button" value="Submit" onClick={this.submitForm}> Submit</button>
+          <button className="btn btn-sm btn-success" type="button" value="Submit" onClick={this.submitForm}> Register</button>
     </form>
   );
 }
 }
-export default Form;
+export default Register;

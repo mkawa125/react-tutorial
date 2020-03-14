@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Form extends Component {
+class Login extends Component {
   constructor(props) {
     super(props)
 
@@ -31,7 +31,7 @@ render() {
     
   return (
     <form>
-      <label for="name">Name</label>
+      <label for="name">Username or email</label>
       <input
         type="text"
         name="name"
@@ -39,18 +39,18 @@ render() {
         className="form-control"
         value={name}
         onChange={this.handleChange} />
-      <label for="job">Job</label>
+      <label for="job">Password</label>
       <input
-        type="text"
+        type="password"
         name="job"
         id="job"
         className="form-control"
         value={job}
         onChange={ this.handleChange } />
           
-          <button className="btn btn-sm btn-success" type="button" value="Submit" onClick={this.submitForm}> Submit</button>
+          <button className="btn btn-sm btn-primary" type="button" value="Submit" onClick={this.submitForm}> Login</button>
     </form>
   );
 }
 }
-export default Form;
+export default Login;
