@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../../public/auth.css'
 import {
-  BrowserRouter as Router,
   Link
 } from 'react-router-dom';
 
@@ -82,9 +81,11 @@ render() {
                     </div>
                     </form>
                     </div>
-                </div>
         </div>
-    
+        <div className="not-registered">
+          Not registered? <Link to="/register">Create Account</Link>
+        </div>
+        </div>
   );
 }
 }

@@ -49,3 +49,10 @@ input.form-control{
 .lables{
   margin-top: 0;
 }
+.not-registered{
+  font-size: small;
+  font-style: italic;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 15px;
+}
