@@ -33,30 +33,20 @@ render() {
             <nav className="sidebar-nav">
 
             <ul className="nav">
-
                 <li className="nav-item">
-                  <Link to="/">Mkawa</Link>
+                  <Link className="nav-link" to="/">Dashboard</Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link to="/">Mkawa</Link>
-                </li>
+                  <Link className="nav-link" to="/">Users</Link>
+              </li>
+              
+              <li className="nav-item">
+                  <Link className="nav-link" to="/">Roles</Link>
+              </li>
 
-                <li className="nav-item">
-                  <Link to="/">Mkawa</Link>
-                </li>
-
-                <li className="nav-item">
-                  <Link to="/">Mkawa</Link>
-                </li>
-
-                <li className="nav-item">
-                  <Link to="/">Mkawa</Link>
-                </li>
-
-                <li className="nav-item">
-                  <Link to="/">Mkawa</Link>
-                </li>
+          
+            
                 <li className="nav-item nav-dropdown d-lg-none">
 
                     <ul className="nav-dropdown-items">
