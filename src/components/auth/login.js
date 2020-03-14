@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import '../../public/auth.css'
+import {
+  BrowserRouter as Router,
+  Link
+} from 'react-router-dom';
 
 class Login extends Component {
   constructor(props) {
@@ -33,29 +37,51 @@ render() {
     return (
       
         <div className='col-md-4 offset-4'>
-            <div className="login-box">
-            <form>
-                <label for="name">Username or email</label>
-                <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="username or email"
-                    className="form-control"
-                    value={name}
-                    onChange={this.handleChange} />
-                <label for="job">Password</label>
-                <input
-                    type="password"
-                    name="job"
-                    placeholder="password"
-                    id="job"
-                    className="form-control"
-                    value={job}
-                    onChange={ this.handleChange } />
-                    
-                    <button className="btn btn-sm btn-primary" type="button" value="Submit" onClick={this.submitForm}> Login</button>
-                </form>
+            <div className="col-md-12 login-box">
+                <div className="login-head" >Please Login</div>
+
+                <div className="form-body">
+                <form> 
+                    <div className="form-group">
+                        <label for="name">Username or email</label>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            placeholder="username or email"
+                            className="form-control"
+                            value={name}
+                            onChange={this.handleChange} />
+                    </div>
+
+                    <div className="form-group">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <label className="lables" for="job">Password</label>
+                            </div>
+                            <div className="col-md-6 forgort-passwrd">
+                                <Link to="/">Forgot Your Password?</Link>
+                            </div>
+                        </div>
+                        <div>
+                            <input
+                            type="password"
+                            name="job"
+                            placeholder="password"
+                            id="job"
+                            className="form-control"
+                            value={job}
+                            onChange={ this.handleChange } />
+                        </div>
+                        
+                    </div>
+
+                    <div className="">
+                        <button className="btn btn-sm btn-primary login-button" type="button" value="Submit" onClick={this.submitForm}> Login</button>
+
+                    </div>
+                    </form>
+                    </div>
                 </div>
         </div>
     
