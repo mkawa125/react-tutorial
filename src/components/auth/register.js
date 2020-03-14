@@ -72,7 +72,7 @@ render() {
                             <input
                             type="password"
                             name="password"
-                            placeholder="password"
+                            placeholder="Password"
                             id="password"
                             className="form-control"
                             onChange={ this.handleChange } />
@@ -87,7 +87,7 @@ render() {
                             <input
                             type="password"
                             name="confirm-password"
-                            placeholder="confirm password"
+                            placeholder="Confirm Password"
                             id="confirm_password"
                             className="form-control"
                             onChange={ this.handleChange } />
