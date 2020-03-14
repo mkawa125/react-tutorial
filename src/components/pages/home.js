@@ -1,4 +1,10 @@
 import React, { Component } from 'react'
+import '../../public/css/app.css'
+import Header from '../../components/layouts/header'
+// import Sidebar from '../../components/layouts/sidebar'
+import {
+  Link
+} from 'react-router-dom';
 
 class Home extends Component {
   constructor(props) {
@@ -20,9 +26,62 @@ class Home extends Component {
 }
 render() {    
   return (
-      <div>
-          sdsd
-    </div>
+    <div className="app header-fixed sidebar-lg-show sidebar-fixed">
+      <Header></Header>
+      <div className="app-body">
+        <div className="sidebar">
+            <nav className="sidebar-nav">
+
+            <ul className="nav">
+
+                <li className="nav-item">
+                  <Link to="/">Mkawa</Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to="/">Mkawa</Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to="/">Mkawa</Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to="/">Mkawa</Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to="/">Mkawa</Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to="/">Mkawa</Link>
+                </li>
+                <li className="nav-item nav-dropdown d-lg-none">
+
+                    <ul className="nav-dropdown-items">
+
+                        <li className="nav-item ">
+                        <Link>Mkawa</Link>
+                        </li>
+
+                        <li className="nav-item ">
+                      <Link>Mkawa</Link>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </nav>
+        </div>
+          
+      </div>
+      
+      </div>
+      
   );
 }
 }
