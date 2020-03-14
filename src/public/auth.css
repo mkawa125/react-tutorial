@@ -1,0 +1,13 @@
+.container{
+  margin-top: 25px;
+  padding: 20px;
+}
+.login-box{
+    padding: 10px 30px;
+    font-size: small;
+    border: 1px solid silver;
+
+}
+input.form-control::placeholder{
+    font-size: small;
+}
