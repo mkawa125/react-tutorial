@@ -22,6 +22,7 @@
   border-top-left-radius: 6px;
   padding: 10px;
   text-align: center;
+  font-weight: 600;
 }
 .forgort-passwrd{
   font-weight: 600;
@@ -41,7 +42,8 @@
   float: right;
 }
 input.form-control::placeholder{
-    font-size: small;
+    font-size: smaller;
+    font-style: italic;
 }
 input.form-control{
     font-size: small;
