@@ -42,12 +42,12 @@ render() {
                 <div className="form-body">
                 <form> 
                     <div className="form-group">
-                        <label for="name">Username or email</label>
+                        <label for="name">Username or Email</label>
                         <input
                             type="text"
                             name="name"
                             id="name"
-                            placeholder="username or email"
+                            placeholder="Username or Email"
                             className="form-control"
                             value={name}
                             onChange={this.handleChange} />
@@ -66,7 +66,7 @@ render() {
                             <input
                             type="password"
                             name="job"
-                            placeholder="password"
+                            placeholder="Password"
                             id="job"
                             className="form-control"
                             value={job}

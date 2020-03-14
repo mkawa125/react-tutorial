@@ -42,7 +42,7 @@
   float: right;
 }
 input.form-control::placeholder{
-    font-size: smaller;
+    font-size: 12px;
     font-style: italic;
 }
 input.form-control{
