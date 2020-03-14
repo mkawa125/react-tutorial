@@ -29,27 +29,33 @@ class Login extends Component {
 render() {
   const { name, job } = this.state;
     
-  return (
-    <form>
-      <label for="name">Username or email</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        className="form-control"
-        value={name}
-        onChange={this.handleChange} />
-      <label for="job">Password</label>
-      <input
-        type="password"
-        name="job"
-        id="job"
-        className="form-control"
-        value={job}
-        onChange={ this.handleChange } />
-          
-          <button className="btn btn-sm btn-primary" type="button" value="Submit" onClick={this.submitForm}> Login</button>
-    </form>
+    return (
+      
+        <div className='col-md-4 offset-4'>
+            <form>
+                <label for="name">Username or email</label>
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="username or email"
+                    className="form-control"
+                    value={name}
+                    onChange={this.handleChange} />
+                <label for="job">Password</label>
+                <input
+                    type="password"
+                    name="job"
+                    placeholder="password"
+                    id="job"
+                    className="form-control"
+                    value={job}
+                    onChange={ this.handleChange } />
+                    
+                    <button className="btn btn-sm btn-primary" type="button" value="Submit" onClick={this.submitForm}> Login</button>
+                </form>
+        </div>
+    
   );
 }
 }
