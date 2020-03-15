@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../../public/css/app.css'
+// import '../../public/css/app.css'
 import {
   Link
 } from 'react-router-dom';
@@ -9,48 +9,78 @@ class Header extends Component
 {
     render(){
         return (
-            <header className="app-header navbar">
-                Online Coding community
-            <button className="d-none d-lg-inline navbar-toggler sidebar-toggler"
-                    type="button"
-                    data-toggle="sidebar-lg-show">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <header class="main-header">
 
-            <button className="d-lg-none navbar-toggler sidebar-toggler"
-                    type="button"
-                    data-toggle="sidebar-show">
-                <span className="navbar-toggler-icon"></span>
-            </button>
+                <Link href="index2.html" class="logo">
+                <span class="logo-mini"><b>A</b>LT</span>
+                <span class="logo-lg"><b>Admin</b>LTE</span>
+                </Link>
 
-            <ul class="nav navbar-nav mr-auto d-none d-lg-flex">
+                <nav class="navbar navbar-static-top navbar-fixed-top">
+                <Link href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </Link>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown notifications-menu">
+                        <Link href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-bell-o"></i>
+                        <span class="label label-warning">10</span>
+                        </Link>
+                        <ul class="dropdown-menu">
+                        <li class="header">You have 10 notifications</li>
+                        <li>
+                            <ul class="menu">
+                            <li>
+                                <Link href="#">
+                                <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                </Link>
+                            </li>
+                            </ul>
+                        </li>
+                        <li class="footer"><Link href="#">View all</Link></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown user user-menu">
+                        <Link href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="hidden-xs">Alexander Pierce</span>
+                        </Link>
+                        <ul class="dropdown-menu">
+                        <li class="user-header">
 
-                <li class="nav-item px-3">
-                    <Link to="/login">Login</Link>
-                </li>
-
-                <li class="nav-item px-3">
-                    <Link to="/register">Register</Link>
-                </li>
-
-
-            </ul>
-
-            <ul className="nav navbar-nav d-none d-lg-flex">
-
-                <li className="nav-item px-3">
-
-                    <div className="dropdown">
-                        sasasa
-                        <div className="dropdown-menu dropdown-menu-right">
-                          <Link>Logout</Link>
-                        </div>
-                    </div>
-
-                </li>
-            </ul>
-
-        </header>
+                            <p>
+                            Alexander Pierce - Web Developer
+                            <small>Member since Nov. 2012</small>
+                            </p>
+                        </li>
+                        <li class="user-body">
+                            <div class="row">
+                            <div class="col-xs-4 text-center">
+                                <Link href="#">Followers</Link>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <Link href="#">Sales</Link>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <Link href="#">Friends</Link>
+                            </div>
+                            </div>
+                        </li>
+                        <li class="user-footer">
+                            <div class="pull-left">
+                            <Link href="#" class="btn btn-default btn-flat">Profile</Link>
+                            </div>
+                            <div class="pull-right">
+                            <Link href="#" class="btn btn-default btn-flat">Sign out</Link>
+                            </div>
+                        </li>
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+                </nav>
+            </header>
         );
     }
 }

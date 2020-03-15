@@ -3,12 +3,12 @@ import
 {
   BrowserRouter as Router,
   Route,
-  Link
+  
 } from 'react-router-dom';
 
 // import history from './services/history';
 // import Routes from './routes';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import './index.css'
 import Login from './components/auth/login';
 import Register from './components/auth/register';
