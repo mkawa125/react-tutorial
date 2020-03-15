@@ -1,0 +1,60 @@
+.container{
+  margin-top: 25px;
+  padding: 20px;
+}
+.login-box{
+    font-size: small;
+    padding: 0;
+    border: 1px solid silver;
+    border-radius: 4px;
+
+}
+.form-body{
+  padding: 10px 35px 50px 35px;
+}
+.login-head{
+  font-size: medium;
+  background-color: whitesmoke;
+  border-bottom: 1px solid silver;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+.forgort-passwrd{
+  font-weight: 600;
+  text-align: right;
+}
+
+/* .form{
+  background-color: rebeccapurple;
+  margin-bottom: 50px;
+  padding: 25px;
+} */
+
+.login-button{
+  font-weight: 600;
+  padding: 5px 25px;
+  /* margin-bottom: 20px; */
+  float: right;
+}
+input.form-control::placeholder{
+    font-size: 12px;
+    font-style: italic;
+}
+input.form-control{
+    font-size: small;
+}
+.lables{
+  margin-top: 0;
+}
+.not-registered{
+  font-size: small;
+  font-style: italic;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 15px;
+}
