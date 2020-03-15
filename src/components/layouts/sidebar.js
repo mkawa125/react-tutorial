@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../public/css/app.css'
+// import '../../public/css/app.css'
 import {
   Link
 } from 'react-router-dom';
@@ -7,54 +7,40 @@ import {
 class Sidebar extends Component {
 render() {    
   return (
-          <nav className="sidebar-nav">
-
-    <ul className="nav">
-
-              <li className="nav-title">Users </li>
-
-        <li className="nav-item">
-           <Link className="nav-link" to="/">Mkawa</Link>
-        </li>
-
-        <li className="nav-item">
-           <Link  to="/">Mkawa</Link>
-        </li>
-
-        <li className="nav-item">
-           <Link to="/">Mkawa</Link>
-        </li>
-
-        <li className="nav-item">
-           <Link to="/">Mkawa</Link>
-        </li>
-
-        <li className="nav-item">
-           <Link to="/">Mkawa</Link>
-        </li>
-
-        <li className="nav-item">
-           <Link to="/">Mkawa</Link>
-        </li>
-        <li className="nav-item nav-dropdown d-lg-none">
-
-            <ul className="nav-dropdown-items">
-
-                <li className="nav-item ">
-                <Link>Mkawa</Link>
-                </li>
-
-                <li className="nav-item ">
-               <Link>Mkawa</Link>
-                </li>
-
+         <aside class="main-sidebar">
+         <section class="sidebar">
+            <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="active treeview menu-open">
+               <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                  <span class="pull-right-container">
+                  </span>
+               </a>
+               
+            </li>
+            <li class="treeview">
+               <a href="#">
+                  <i class="fa fa-share"></i> <span>Multilevel</span>
+                  <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+               </a>
+               <ul class="treeview-menu">
+                  <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                  <li class="treeview">
+                  <a href="#"><i class="fa fa-circle-o"></i> Level One
+                     <span class="pull-right-container">
+                     </span>
+                  </a>
+                  
+                  </li>
+               </ul>
+            </li>
+            
             </ul>
-
-        </li>
-
-    </ul>
-
-</nav>
+         </section>
+      </aside>
   );
 }
 }
