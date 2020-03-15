@@ -12,27 +12,56 @@ render() {
             <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <li class="active treeview menu-open">
-               <a href="#">
+               <Link href="#">
                   <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                   <span class="pull-right-container">
                   </span>
-               </a>
+               </Link>
                
-            </li>
+              </li>
+              
+              <li className="">
+               <Link to="/">
+                  <i className="fa fa-users"></i> <span>Users</span>
+                  <span className="pull-right-container">
+                  </span>
+               </Link>
+               
+              </li>
+
+              <li className="">
+               <Link to="/login">
+                  <i className="fa fa-lock"></i> <span>Login</span>
+                  <span className="pull-right-container">
+                  </span>
+               </Link>
+               
+              </li>
+
+              <li className="">
+               <Link to="/register">
+                  <i className="fa fa-pencil"></i> <span>Register</span>
+                  <span className="pull-right-container">
+                  </span>
+               </Link>
+               
+              </li>
+              
+             
             <li class="treeview">
-               <a href="#">
+               <Link href="#">
                   <i class="fa fa-share"></i> <span>Multilevel</span>
                   <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                   </span>
-               </a>
+               </Link>
                <ul class="treeview-menu">
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                  <li><Link href="#"><i class="fa fa-circle-o"></i> Level One</Link></li>
                   <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Level One
+                  <Link href="#"><i class="fa fa-circle-o"></i> Level One
                      <span class="pull-right-container">
                      </span>
-                  </a>
+                  </Link>
                   
                   </li>
                </ul>
