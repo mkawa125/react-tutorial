@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 // import '../../public/css/app.css'
 import Header from '../../components/layouts/header'
 import Sidebar from '../../components/layouts/sidebar'
-import {
-  Link
-} from 'react-router-dom';
+import Content from '../../components/layouts/content';
 
 class Home extends Component {
   constructor(props) {
@@ -29,7 +27,8 @@ render() {
     <div className="wrapper">
       <Header></Header>
       <Sidebar></Sidebar>
-      </div>
+      <Content></Content>
+    </div>
       
   );
 }
