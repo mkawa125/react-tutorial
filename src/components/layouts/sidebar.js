@@ -11,10 +11,10 @@ render() {
          <section class="sidebar">
             <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active treeview menu-open">
-               <Link href="#">
-                  <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                  <span class="pull-right-container">
+            <li class="">
+               <Link to="/">
+                  <i className="fa fa-dashboard"></i> <span>Dashboard</span>
+                  <span className="pull-right-container">
                   </span>
                </Link>
                
