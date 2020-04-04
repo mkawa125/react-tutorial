@@ -12,8 +12,8 @@ class Header extends Component
             <header class="main-header">
 
                 <Link href="index2.html" class="logo">
-                <span class="logo-mini"><b>A</b>LT</span>
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-mini"><b>YDI</b>H</span>
+                <span class="logo-lg"><b>YDI</b>HUB</span>
                 </Link>
 
                 <nav class="navbar navbar-static-top navbar-fixed-top">
