@@ -15,7 +15,7 @@ import Register from './components/auth/register';
 import Header from './components/layouts/header'
 import Sidebar from './components/layouts/sidebar'
 import Dashboard from './components/dashboard/index'
-import Content from './components/layouts/content';
+import Users from './components/users/index';
 
 
 class App extends Component
@@ -44,6 +44,7 @@ class App extends Component
             <Route exact path='/login' component={Login}></Route>
           <Route exact path='/register' component={ Register }></Route>
           <Route exact path='/' component={Dashboard}></Route>
+          <Route exact path='/users' component={Users}></Route>
         </div>
       </Router>
     )
