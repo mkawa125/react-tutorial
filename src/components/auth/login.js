@@ -34,8 +34,8 @@ render() {
   const { name, job } = this.state;
     
     return (
-      
-        <div className='col-md-4 offset-4'>
+      <div class="content-wrapper">
+        <div className='col-md-6 col-md-offset-5'>
             <div className="col-md-12 login-box">
                 <div className="login-head" >Please Login</div>
 
@@ -80,10 +80,13 @@ render() {
 
                     </div>
                     </form>
-                    </div>
-        </div>
-        <div className="not-registered">
+            </div>
+            
+            <div className="not-registered">
           Not registered? <Link to="/register">Create Account</Link>
+        </div>
+        </div>
+        
         </div>
         </div>
   );

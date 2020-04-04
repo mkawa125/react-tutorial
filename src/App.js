@@ -12,7 +12,10 @@ import
 import './index.css'
 import Login from './components/auth/login';
 import Register from './components/auth/register';
-import Home from './components/pages/home';
+import Header from './components/layouts/header'
+import Sidebar from './components/layouts/sidebar'
+// import Content from './components/layouts/content';
+
 
 class App extends Component
 {
@@ -35,7 +38,8 @@ class App extends Component
     return (
       <Router>
         <div>
-          <Home></Home>
+          <Header></Header>
+          <Sidebar></Sidebar>
             <Route exact path='/login' component={Login}></Route>
             <Route exact path='/register' component={Register}></Route>
         </div>
