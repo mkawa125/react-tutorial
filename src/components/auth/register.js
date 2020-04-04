@@ -20,8 +20,8 @@ class Register extends Component {
 render() {
     
     return (
-      
-        <div className='col-md-4 offset-4'>
+      <div class="content-wrapper">
+        <div className='col-md-6 col-md-offset-5'>
             <div className="col-md-12 login-box">
                 <div className="login-head" >Create Account</div>
 
@@ -100,11 +100,15 @@ render() {
 
                     </div>
                     </form>
-                    </div>
-        </div>
-        <div className="not-registered">
+            </div>
+            
+            <div className="not-registered">
           Already have an accunt ? <Link to="/login">login</Link>
         </div>
+        </div>
+        
+        </div>
+
         </div>
   );
 }
