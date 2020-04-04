@@ -48,22 +48,19 @@ render() {
               </li>
               
              
+              <li class="header">OTHERS</li>
             <li class="treeview">
                <Link href="#">
-                  <i class="fa fa-share"></i> <span>Multilevel</span>
+                  <i class="fa fa-cog"></i> <span>Settings</span>
                   <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                   </span>
                </Link>
                <ul class="treeview-menu">
-                  <li><Link href="#"><i class="fa fa-circle-o"></i> Level One</Link></li>
-                  <li class="treeview">
-                  <Link href="#"><i class="fa fa-circle-o"></i> Level One
-                     <span class="pull-right-container">
-                     </span>
-                  </Link>
-                  
-                  </li>
+                    <li class="treeview">
+                       <Link href="#"><i class="fa fa-circle-o"></i> Roles & Permissions
+                       </Link>
+                    </li>
                </ul>
             </li>
             
