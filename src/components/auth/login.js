@@ -34,8 +34,25 @@ render() {
   const { name, job } = this.state;
     
     return (
-      <div class="content-wrapper">
-        <div className='col-md-6 col-md-offset-5'>
+      
+
+            <div className="content-wrapper">
+    <section className="content-header">
+      <h1>
+        Signin
+      </h1>
+      <ol className="breadcrumb">
+        <li> <Link to="/"> <i className="fa fa-dashboard"></i> Home</Link></li>
+        <li className="active">login</li>
+      </ol>
+    </section>
+
+    <section className="content">
+      <div className="row">
+        <div className="col-md-12">
+          <div className="box">
+
+                 <div className='col-md-6 col-md-offset-3'>
             <div className="col-md-12 login-box">
                 <div className="login-head" >Please Login</div>
 
@@ -88,7 +105,11 @@ render() {
         </div>
         
         </div>
+              </div>
         </div>
+      </div>      
+    </section>
+            </div>
   );
 }
 }

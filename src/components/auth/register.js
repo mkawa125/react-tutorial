@@ -21,7 +21,7 @@ render() {
     
     return (
       <div class="content-wrapper">
-        <div className='col-md-6 col-md-offset-5'>
+        <div className='col-md-6 col-md-offset-3'>
             <div className="col-md-12 login-box">
                 <div className="login-head" >Create Account</div>
 
