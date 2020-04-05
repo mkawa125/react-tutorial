@@ -40,7 +40,6 @@ render() {
       </h1>
       <ol className="breadcrumb">
         <li> <Link to="/"> <i className="fa fa-dashboard"></i> Home</Link></li>
-        <li className="active">Dashboard</li>
       </ol>
     </section>
 
