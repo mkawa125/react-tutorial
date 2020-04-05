@@ -11,7 +11,7 @@ class Header extends Component
         return (
             <header class="main-header">
 
-                <Link href="index2.html" class="logo">
+                <Link className="logo">
                 <span class="logo-mini"><b>YDI</b>H</span>
                 <span class="logo-lg"><b>YDI</b>HUB</span>
                 </Link>
