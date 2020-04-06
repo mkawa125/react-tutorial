@@ -35,7 +35,24 @@ render() {
     
     return (
       
-        <div className='col-md-4 offset-4'>
+
+            <div className="content-wrapper">
+    <section className="content-header">
+      <h1>
+        Signin
+      </h1>
+      <ol className="breadcrumb">
+        <li> <Link to="/"> <i className="fa fa-dashboard"></i> Home</Link></li>
+        <li className="active">login</li>
+      </ol>
+    </section>
+
+    <section className="content">
+      <div className="row">
+        <div className="col-md-12">
+          <div className="box">
+
+                 <div className='col-md-6 col-md-offset-3'>
             <div className="col-md-12 login-box">
                 <div className="login-head" >Please Login</div>
 
@@ -80,12 +97,19 @@ render() {
 
                     </div>
                     </form>
-                    </div>
-        </div>
-        <div className="not-registered">
+            </div>
+            
+            <div className="not-registered">
           Not registered? <Link to="/register">Create Account</Link>
         </div>
         </div>
+        
+        </div>
+              </div>
+        </div>
+      </div>      
+    </section>
+            </div>
   );
 }
 }

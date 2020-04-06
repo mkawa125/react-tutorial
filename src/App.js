@@ -12,7 +12,11 @@ import
 import './index.css'
 import Login from './components/auth/login';
 import Register from './components/auth/register';
-import Home from './components/pages/home';
+import Header from './components/layouts/header'
+import Sidebar from './components/layouts/sidebar'
+import Dashboard from './components/dashboard/index'
+import Users from './components/users/index';
+
 
 class App extends Component
 {
@@ -35,9 +39,12 @@ class App extends Component
     return (
       <Router>
         <div>
-          <Home></Home>
+          <Header></Header>
+          <Sidebar></Sidebar>
             <Route exact path='/login' component={Login}></Route>
-            <Route exact path='/register' component={Register}></Route>
+          <Route exact path='/register' component={ Register }></Route>
+          <Route exact path='/' component={Dashboard}></Route>
+          <Route exact path='/users' component={Users}></Route>
         </div>
       </Router>
     )

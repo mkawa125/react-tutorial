@@ -20,8 +20,23 @@ class Register extends Component {
 render() {
     
     return (
-      
-        <div className='col-md-4 offset-4'>
+      <div className="content-wrapper">
+    <section className="content-header">
+      <h1>
+        Create Account
+      </h1>
+      <ol className="breadcrumb">
+        <li> <Link to="/"> <i className="fa fa-dashboard"></i> Home</Link></li>
+        <li className="active">register</li>
+      </ol>
+    </section>
+
+    <section className="content">
+      <div className="row">
+        <div className="col-md-12">
+          <div className="box">
+
+                <div className='col-md-6 col-md-offset-3'>
             <div className="col-md-12 login-box">
                 <div className="login-head" >Create Account</div>
 
@@ -38,10 +53,6 @@ render() {
                             onChange={this.handleChange} />
               </div>
               
-              <div>
-                <div></div>
-                <div></div>
-              </div>
 
               <div className="form-group">
                         <label className="lables"  for="name">Email Address</label>
@@ -100,12 +111,19 @@ render() {
 
                     </div>
                     </form>
-                    </div>
-        </div>
-        <div className="not-registered">
+            </div>
+            
+            <div className="not-registered">
           Already have an accunt ? <Link to="/login">login</Link>
         </div>
         </div>
+        
+        </div>
+              </div>
+        </div>
+      </div>      
+    </section>
+            </div>
   );
 }
 }

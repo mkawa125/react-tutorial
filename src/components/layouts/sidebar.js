@@ -11,30 +11,56 @@ render() {
          <section class="sidebar">
             <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active treeview menu-open">
-               <a href="#">
-                  <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                  <span class="pull-right-container">
+            <li class="">
+               <Link to="/">
+                  <i className="fa fa-dashboard"></i> <span>Dashboard</span>
+                  <span className="pull-right-container">
                   </span>
-               </a>
+               </Link>
                
-            </li>
+              </li>
+              
+              <li className="">
+               <Link to="/users">
+                  <i className="fa fa-users"></i> <span>Users Management</span>
+                  <span className="pull-right-container">
+                  </span>
+               </Link>
+               
+              </li>
+
+              <li className="">
+               <Link to="/login">
+                  <i className="fa fa-lock"></i> <span>Login</span>
+                  <span className="pull-right-container">
+                  </span>
+               </Link>
+               
+              </li>
+
+              <li className="">
+               <Link to="/register">
+                  <i className="fa fa-pencil"></i> <span>Register</span>
+                  <span className="pull-right-container">
+                  </span>
+               </Link>
+               
+              </li>
+              
+             
+              <li class="header">OTHERS</li>
             <li class="treeview">
-               <a href="#">
-                  <i class="fa fa-share"></i> <span>Multilevel</span>
+               <Link href="#">
+                  <i class="fa fa-cog"></i> <span>Settings</span>
                   <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                   </span>
-               </a>
+               </Link>
                <ul class="treeview-menu">
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                  <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Level One
-                     <span class="pull-right-container">
-                     </span>
-                  </a>
-                  
-                  </li>
+                    <li class="treeview">
+                       <Link href="#"><i class="fa fa-circle-o"></i> Roles & Permissions
+                       </Link>
+                    </li>
                </ul>
             </li>
             
