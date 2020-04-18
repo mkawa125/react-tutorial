@@ -16,8 +16,6 @@ class Home extends Component {
     this.state = this.initialState
   
   }
-
-
     submitForm = () => {
       // this.props.handleSubmit(this.state)
       this.setState(this.initialState)
