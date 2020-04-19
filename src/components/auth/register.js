@@ -3,111 +3,149 @@ import '../../public/css/auth.css'
 import {
   Link
 } from 'react-router-dom';
+import axios from 'axios';
 
 class Register extends Component {
-  constructor(props) {
-    super(props)
+  constructor(props){
+        super(props);
+        this.state = {
+            name: '',
+            email : '',
+            password: '',
+            username: '',
+            first_name: 'Dahabu',
+            surname: 'mkawa',
+            password_confirmation: '',
+        }
+     }
 
-    this.initialState = {
-      name: '',
-      email: '',
-    }
+    onSubmit(e){
+        e.preventDefault();
+        const {name, email, username, first_name, surname,  password, password_confirmation} = this.state ;
+        console.log(first_name)
+        axios.post('http://127.0.0.1:8000/api/v1/register', {
+            name,
+            email,
+            username,
+            password,
+            first_name,
+            surname,
+            password_confirmation
+          })
+          .then(response=> {
+           this.setState({err: false});
+           this.props.history.push("/") ;
+          })
+          .catch(error=> {
+            this.refs.name.value = "";
+            this.refs.username.value="";
+            this.refs.password.value="";
+            this.refs.email.value="";
+            this.refs.confirm.value="";
+            this.setState({err: true});
+          });
+     }
 
-    this.state = this.initialState
+     onChange(e){
+        const {name, value} = e.target ;
+        this.setState({[name]: value});
+     }
   
-  
-  }
 render() {
-    
+    let error = this.state.err ;
+    let msg = (!error) ? 'Registered Successfully' : 'Oops! , Something went wrong.' ;
+    let name = (!error) ? 'alert alert-success' : 'alert alert-danger' ;
     return (
       <div className="content-wrapper">
-    <section className="content-header">
-      <h1>
-        Create Account
-      </h1>
-      <ol className="breadcrumb">
-        <li> <Link to="/"> <i className="fa fa-dashboard"></i> Home</Link></li>
-        <li className="active">register</li>
-      </ol>
-    </section>
+    
 
     <section className="content">
       <div className="row">
         <div className="col-md-12">
-          <div className="box">
+              <div className="">
+                <div className="col-md-offset-2 col-md-6 col-md-offset-2">
+                          {error !== undefined && <div className={name} role="alert">{msg}</div>}
+                      </div>
 
                 <div className='col-md-6 col-md-offset-3'>
-            <div className="col-md-12 login-box">
+                  <div className="col-md-12 login-box">
+                    
                 <div className="login-head" >Create Account</div>
 
-                <div className="form-body">
-                <form> 
+                    <div className="form-body">
+                      
+                <form  className="form-horizontal" method="POST" onSubmit= {this.onSubmit.bind(this)}> 
                     <div className="form-group">
-                        <label className="lables" for="name">Full Names</label>
+                        <label className="lables" htmlFor="name">Full Names</label>
                         <input
                             type="text"
                             name="name"
                             id="name"
+                            ref="name"
                             placeholder="Full names e.g Dahabu Mkawa"
                             className="form-control"
-                            onChange={this.handleChange} />
+                            onChange={this.onChange.bind(this)} required autoFocus  />
               </div>
               
 
               <div className="form-group">
-                        <label className="lables"  for="name">Email Address</label>
+                        <label className="lables"  htmlFor="email">Email Address</label>
                         <input
                             type="email"
                             name="email"
                             id="email"
+                            ref="email"
                             placeholder="Email address e.g dahabusaidi@gmail.com"
                             className="form-control"
-                            onChange={this.handleChange} />
+                            onChange={this.onChange.bind(this)} required />
                     </div>
 
               <div className="form-group">
-                        <label className="lables"  for="name">Username</label>
+                        <label className="lables"  htmlFor="username">Username</label>
                         <input
                             type="text"
                             name="username"
                             id="username"
+                            ref="username"
                             placeholder="Username e.g mkawa125"
                             className="form-control"
-                            onChange={this.handleChange} />
+                            onChange={this.onChange.bind(this)} required />
                     </div>
 
                     <div className="form-group">
-                        <label className="lables" for="job">Password</label>
+                        <label className="lables" htmlFor="password">Password</label>
                             
                         <div>
                             <input
                             type="password"
                             name="password"
                             placeholder="Password"
-                            id="password"
+                              id="password"
+                              ref="password"
                             className="form-control"
-                            onChange={ this.handleChange } />
+                            onChange={this.onChange.bind(this)} required />
                         </div>
                         
               </div>
               
               <div className="form-group">
-                        <label className="lables" for="job">Confirm Password</label>
+                        <label className="lables" htmlFor="password_confirmation">Confirm Password</label>
                             
                         <div>
                             <input
                             type="password"
-                            name="confirm-password"
+                            name="password_confirmation"
                             placeholder="Confirm Password"
-                            id="confirm_password"
+                            id="password_confirmation"
+                            ref="confirm"
                             className="form-control"
-                            onChange={ this.handleChange } />
+                            onChange={this.onChange.bind(this)} required />
                         </div>
                         
                     </div>
 
                     <div className="">
-                        <button className="btn btn-sm btn-success login-button" type="button" value="Submit" onClick={this.submitForm}> Register</button>
+                        <button className="btn btn-sm btn-success login-button" type="submit"> Register</button>
 
                     </div>
                     </form>
