@@ -29,7 +29,9 @@ class Login extends Component {
             
           })
           .catch(error=> {
-            console.log(error)
+            this.refs.email.value="";
+            this.refs.password.value="";
+            this.setState({err: true});
           });
      }
 
@@ -50,12 +52,14 @@ render() {
         <div className="col-md-12">
           <div className="">
 
-                 <div className='col-md-6 col-md-offset-3'>
+            <div className='col-md-6 col-md-offset-3'>
             <div className="col-md-12 login-box">
                 <div className="login-head" >Please Login</div>
 
                   <div className="form-body">
-                    {error !== undefined && <div className={name} role="alert">{msg}</div>}
+                    <div className="col-md-offset-2 col-md-8 col-md-offset-2">
+                        {error !== undefined && <div className={name} role="alert">{msg}</div>}
+                    </div>  
                 <form  className="form-horizontal" method="POST" onSubmit= {this.onSubmit.bind(this)}> 
                     <div className="form-group">
                         <label htmlFor="email">Username or Email</label>
@@ -63,6 +67,7 @@ render() {
                             type="email"
                             name="email"
                             id="email"
+                            ref="email"
                             placeholder="Username or Email"
                             className="form-control"
                               onChange={this.onChange.bind(this)}  required  />
@@ -83,6 +88,7 @@ render() {
                             name="password"
                             placeholder="Password"
                             id="password"
+                            ref="password"
                             className="form-control"
                             onChange={this.onChange.bind(this)}  required />
                         </div>
