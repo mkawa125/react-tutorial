@@ -38,13 +38,14 @@ class App extends Component
     this.setState({ characters: [ ...this.state.characters, character ] })
     
 }
-  render() {
+  render ()
+  {    
     return (
       <Router>
         <div>
           <Route path='/login' render={ props => <Login { ...props} /> }></Route>
           <Route  path='/register' component={ Register }></Route>
-          <Route  path='/users' component={ Users }></Route>
+          <AuthenticatedRoutes  path='/users' component={ Users }></AuthenticatedRoutes>
           <AuthenticatedRoutes path="/home" component={ Dashboard }></AuthenticatedRoutes>
           </div>
       </Router>

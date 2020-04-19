@@ -3,6 +3,10 @@ import '../../public/css/auth.css'
 import {
   Link
 } from 'react-router-dom';
+import Header from '../../components/layouts/header'
+import Sidebar from '../../components/layouts/sidebar'
+
+
 
 class Dashboard extends Component {
   
@@ -10,6 +14,8 @@ render() {
     
     return (
       <div className="content-wrapper">
+        <Header></Header>
+        <Sidebar></Sidebar>
     <section className="content-header">
       <h1>
         Dashboard

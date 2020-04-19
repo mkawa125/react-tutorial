@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {
   Link
 } from 'react-router-dom';
+import Header from '../../components/layouts/header'
+import Sidebar from '../../components/layouts/sidebar'
 
 const TableHeader = () => {
   return (
@@ -196,6 +198,8 @@ class Users extends Component
           
             
             <div className="content-wrapper">
+                <Header></Header>
+                <Sidebar></Sidebar>
     <section className="content-header">
       <h1>
         Users Management
