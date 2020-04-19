@@ -3,77 +3,75 @@ import '../../public/css/auth.css'
 import {
   Link
 } from 'react-router-dom';
+import axios from 'axios'
+// import Header from '../../components/layouts/header'
+
 
 class Login extends Component {
-  constructor(props) {
-    super(props)
-
-    this.initialState = {
-      name: '',
-      job: '',
-    }
-
-    this.state = this.initialState
-  
-  
+  constructor(props){
+        super(props);
+        this.state = {
+            email : '',
+            password: '',
+        }
   }
-    handleChange = event =>
-    {
-        const { name, value } = event.target
+  onSubmit(e){
+        e.preventDefault();
+        const {email , password} = this.state ;
+        axios.post('http://127.0.0.1:8000/api/v1/login', {
+            email, 
+            password
+          })
+          .then(response=> {
+            console.log(response)
+            this.setState({err: false});
+            this.props.history.push("/") ;
+            
+          })
+          .catch(error=> {
+            console.log(error)
+          });
+     }
 
-        this.setState({
-            [ name ]: value,
-        })
-    }
-
-    submitForm = () => {
-      // this.props.handleSubmit(this.state)
-      this.setState(this.initialState)
-}
+     onChange(e){
+        const {name, value} = e.target;
+        this.setState({[name]: value});
+     }
 render() {
-  const { name, job } = this.state;
+  let error = this.state.err ;
+        let msg = (!error) ? 'Login Successful' : 'Wrong Credentials' ;
+        let name = (!error) ? 'alert alert-success' : 'alert alert-danger' ;
     
-    return (
-      
-
-            <div className="content-wrapper">
-    <section className="content-header">
-      <h1>
-        Signin
-      </h1>
-      <ol className="breadcrumb">
-        <li> <Link to="/"> <i className="fa fa-dashboard"></i> Home</Link></li>
-        <li className="active">login</li>
-      </ol>
-    </section>
-
+  return (
+    
+    <div className="content-wrapper">
     <section className="content">
       <div className="row">
         <div className="col-md-12">
-          <div className="box">
+          <div className="">
 
                  <div className='col-md-6 col-md-offset-3'>
             <div className="col-md-12 login-box">
                 <div className="login-head" >Please Login</div>
 
-                <div className="form-body">
-                <form> 
+                  <div className="form-body">
+                    {error !== undefined && <div className={name} role="alert">{msg}</div>}
+                <form  className="form-horizontal" method="POST" onSubmit= {this.onSubmit.bind(this)}> 
                     <div className="form-group">
-                        <label for="name">Username or Email</label>
+                        <label htmlFor="email">Username or Email</label>
                         <input
-                            type="text"
-                            name="name"
-                            id="name"
+                            type="email"
+                            name="email"
+                            id="email"
                             placeholder="Username or Email"
                             className="form-control"
-                            value={name}
-                            onChange={this.handleChange} />
+                              onChange={this.onChange.bind(this)}  required  />
                     </div>
 
                     <div className="form-group">
                         <div className="row">
                             <div className="col-md-6">
-                                <label className="lables" for="job">Password</label>
+                                <label className="lables" htmlFor="password">Password</label>
                             </div>
                             <div className="col-md-6 forgort-passwrd">
                                 <Link to="/">Forgot Your Password?</Link>
@@ -82,18 +80,17 @@ render() {
                         <div>
                             <input
                             type="password"
-                            name="job"
+                            name="password"
                             placeholder="Password"
-                            id="job"
+                            id="password"
                             className="form-control"
-                            value={job}
-                            onChange={ this.handleChange } />
+                            onChange={this.onChange.bind(this)}  required />
                         </div>
                         
                     </div>
 
                     <div className="">
-                        <button className="btn btn-sm btn-primary login-button" type="button" value="Submit" onClick={this.submitForm}> Login</button>
+                        <button className="btn btn-sm btn-primary login-button" type="submit" value="Submit" onClick={this.submitForm}> Login</button>
 
                     </div>
                     </form>
@@ -109,7 +106,7 @@ render() {
         </div>
       </div>      
     </section>
-            </div>
+  </div>
   );
 }
 }
