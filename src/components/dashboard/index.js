@@ -3,37 +3,19 @@ import '../../public/css/auth.css'
 import {
   Link
 } from 'react-router-dom';
+import Header from '../../components/layouts/header'
+import Sidebar from '../../components/layouts/sidebar'
+
+
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props)
-
-    this.initialState = {
-      name: '',
-      job: '',
-    }
-
-    this.state = this.initialState
   
-  
-  }
-    handleChange = event =>
-    {
-        const { name, value } = event.target
-
-        this.setState({
-            [ name ]: value,
-        })
-    }
-
-    submitForm = () => {
-      // this.props.handleSubmit(this.state)
-      this.setState(this.initialState)
-}
 render() {
     
     return (
       <div className="content-wrapper">
+        <Header></Header>
+        <Sidebar></Sidebar>
     <section className="content-header">
       <h1>
         Dashboard

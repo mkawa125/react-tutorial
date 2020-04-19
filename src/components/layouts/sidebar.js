@@ -12,7 +12,7 @@ render() {
             <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <li class="">
-               <Link to="/">
+               <Link to="/home">
                   <i className="fa fa-dashboard"></i> <span>Dashboard</span>
                   <span className="pull-right-container">
                   </span>

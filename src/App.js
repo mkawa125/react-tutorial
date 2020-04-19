@@ -12,10 +12,11 @@ import
 import './index.css'
 import Login from './components/auth/login';
 import Register from './components/auth/register';
-import Header from './components/layouts/header'
-import Sidebar from './components/layouts/sidebar'
+// import Header from './components/layouts/header'
+// import Sidebar from './components/layouts/sidebar'
 import Dashboard from './components/dashboard/index'
 import Users from './components/users/index';
+import AuthenticatedRoutes from './routes/privateRoutes'
 
 
 class App extends Component
@@ -23,6 +24,7 @@ class App extends Component
   state = {
     characters: [],
   }
+  
   removeCharacter = index => {
   const { characters } = this.state
 
@@ -33,19 +35,19 @@ class App extends Component
   })
   }
   handleSubmit = character => {
-  this.setState({ characters: [...this.state.characters, character] })
+    this.setState({ characters: [ ...this.state.characters, character ] })
+    
 }
-  render() {
+  render ()
+  {    
     return (
       <Router>
         <div>
-          <Header></Header>
-          <Sidebar></Sidebar>
-            <Route exact path='/login' component={Login}></Route>
-          <Route exact path='/register' component={ Register }></Route>
-          <Route exact path='/' component={Dashboard}></Route>
-          <Route exact path='/users' component={Users}></Route>
-        </div>
+          <Route path='/login' render={ props => <Login { ...props} /> }></Route>
+          <Route  path='/register' component={ Register }></Route>
+          <AuthenticatedRoutes  path='/users' component={ Users }></AuthenticatedRoutes>
+          <AuthenticatedRoutes path="/home" component={ Dashboard }></AuthenticatedRoutes>
+          </div>
       </Router>
     )
   }
