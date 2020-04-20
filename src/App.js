@@ -37,7 +37,8 @@ class App extends Component
   handleSubmit = character => {
     this.setState({ characters: [ ...this.state.characters, character ] })
     
-}
+  }
+  
   render ()
   {    
     return (

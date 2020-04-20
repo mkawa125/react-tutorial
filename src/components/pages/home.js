@@ -25,7 +25,7 @@ render() {
     <div className="wrapper">
       <Header></Header>
       <Sidebar></Sidebar>
-      <Content></Content>
+      <Content></Contengit t>
     </div>
       
   );
