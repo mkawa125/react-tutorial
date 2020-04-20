@@ -7,6 +7,18 @@ import {
 
 class Header extends Component
 {
+    constructor(props){
+        super(props);
+        this.state = {
+            email : '',
+            password: '',
+        }
+  }
+    logout() {
+        localStorage.removeItem('token')
+        this.history.push("/login") ;
+    }
+    
     render(){
         return (
             <header className="main-header">
@@ -60,7 +72,7 @@ class Header extends Component
                             <button className="btn btn-default btn-flat">Profile</button>
                             </div>
                             <div className="pull-right">
-                            <button className="btn btn-default btn-flat">Sign out</button>
+                            <button type="bu" className="btn btn-default btn-flat" onClick={this.logout}>Sign out</button>
                             </div>
                         </li>
                         </ul>
