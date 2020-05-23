@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 // import '../../public/css/app.css'
-import {
-  a
-} from 'react-router-dom';
+import { a } from 'react-router-dom';
 
 
 class Header extends Component
@@ -13,7 +11,7 @@ class Header extends Component
             email : '',
             password: '',
         }
-  }
+    }
     logout() {
         localStorage.removeItem('token')
         this.history.push("/login") ;
