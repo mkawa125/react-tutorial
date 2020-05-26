@@ -1,29 +1,39 @@
 import React, { Component } from "react";
 // import '../../public/css/app.css'
-import {
-  a
-} from 'react-router-dom';
+import { a } from 'react-router-dom';
 
 
 class Header extends Component
 {
+    constructor(props){
+        super(props);
+        this.state = {
+            email : '',
+            password: '',
+        }
+    }
+    logout() {
+        localStorage.removeItem('token')
+        this.history.push("/login") ;
+    }
+    
     render(){
         return (
             <header className="main-header">
 
-                <a className="logo">
+                <a href="!#" className="logo">
                 <span className="logo-mini"><b>YDI</b>H</span>
                 <span className="logo-lg"><b>YDI</b>HUB</span>
                 </a>
 
                 <nav className="navbar navbar-static-top navbar-fixed-top">
-                <a href="#" className="sidebar-toggle" data-toggle="push-menu" role="button">
+                <a href="!#" className="sidebar-toggle" data-toggle="push-menu" role="button">
                     <span className="sr-only">Toggle navigation</span>
                 </a>
                 <div className="navbar-custom-menu">
                     <ul className="nav navbar-nav">
                         <li className="dropdown notifications-menu">
-                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                        <a href="!#" className="dropdown-toggle" data-toggle="dropdown">
                         <i className="fa fa-bell-o"></i>
                         <span className="label label-warning">10</span>
                         </a>
@@ -32,18 +42,18 @@ class Header extends Component
                         <li>
                             <ul className="menu">
                             <li>
-                                <a href="#">
+                                <a href="!#">
                                 <i className="fa fa-users text-aqua"></i> 5 new members joined today
                                 </a>
                             </li>
                             </ul>
                         </li>
-                        <li className="footer"><a href="#">View all</a></li>
+                        <li className="footer"><a href="!#">View all</a></li>
                         </ul>
                     </li>
                     
                     <li className="dropdown user user-menu">
-                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                        <a href="!#" className="dropdown-toggle" data-toggle="dropdown">
                         <span className="hidden-xs">Alexander Pierce</span>
                         </a>
                         <ul className="dropdown-menu">
@@ -54,25 +64,13 @@ class Header extends Component
                             <small>Member since Nov. 2012</small>
                             </p>
                         </li>
-                        <li className="user-body">
-                            <div className="row">
-                            <div className="col-xs-4 text-center">
-                                <a href="#">Followers</a>
-                            </div>
-                            <div className="col-xs-4 text-center">
-                                <a href="#">Sales</a>
-                            </div>
-                            <div className="col-xs-4 text-center">
-                                <a href="#">Friends</a>
-                            </div>
-                            </div>
-                        </li>
+                        
                         <li className="user-footer">
                             <div className="pull-left">
-                            <a href="#" className="btn btn-default btn-flat">Profile</a>
+                            <button className="btn btn-default btn-flat">Profile</button>
                             </div>
                             <div className="pull-right">
-                            <a href="#" className="btn btn-default btn-flat">Sign out</a>
+                            <button type="bu" className="btn btn-default btn-flat" onClick={this.logout}>Sign out</button>
                             </div>
                         </li>
                         </ul>

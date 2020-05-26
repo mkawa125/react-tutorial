@@ -14,6 +14,7 @@ class Login extends Component {
             email : '',
             password: '',
         }
+         this.logout = this.logout.bind(this)
   }
   onSubmit(e){
         e.preventDefault();
@@ -40,6 +41,11 @@ class Login extends Component {
         const {name, value} = e.target;
         this.setState({[name]: value});
      }
+     logout() {
+        console.log(localStorage.getItem('token'))
+     }
+  
+     
 render() {
   let error = this.state.err ;
         let msg = (!error) ? 'Login Successful' : 'Wrong Credentials' ;
