@@ -145,8 +145,8 @@ render() {
                         
                     </div>
 
-                    <div className="">
-                        <button className="btn btn-sm btn-success login-button" type="submit"> Register</button>
+                    <div className="row">
+                        <button className="btn btn-sm btn-block login-button" type="submit"> Register</button>
 
                     </div>
                     </form>
