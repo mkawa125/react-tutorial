@@ -1,20 +1,16 @@
 import React, { Component } from "react";
 // import '../../public/css/app.css'
-import { a } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 class Header extends Component
 {
     constructor(props){
         super(props);
-        this.state = {
-            email : '',
-            password: '',
-        }
     }
-    logout() {
+    logout(props) {
         localStorage.removeItem('token')
-        this.history.push("/login") ;
+        window.location.href = "/";
     }
     
     render(){

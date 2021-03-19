@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import
 {
   BrowserRouter as Router,
-  Route,
+  Route, withRouter
   
 } from 'react-router-dom';
 
