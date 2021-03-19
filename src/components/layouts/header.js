@@ -19,7 +19,7 @@ class Header extends Component
 
                 <a href="!#" className="logo">
                 <span className="logo-mini"><b>YDI</b>H</span>
-                <span className="logo-lg"><b>YDI</b>HUB</span>
+                <span className="logo-lg">SIMUSOLAR</span>
                 </a>
 
                 <nav className="navbar navbar-static-top navbar-fixed-top">
