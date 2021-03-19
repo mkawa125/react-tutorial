@@ -25,7 +25,7 @@ class Login extends Component {
             console.log(response.data.token)
             this.setState({ err: false });
             localStorage.setItem('token', response.data.token);
-            this.props.history.push("/home") ;
+            this.props.history.push("/") ;
             
           })
           .catch(error=> {

@@ -47,7 +47,7 @@ class App extends Component
           <Route path='/login' render={ props => <Login { ...props} /> }></Route>
           <Route  path='/register' component={ Register }></Route>
           <AuthenticatedRoutes  path='/users' component={ Users }></AuthenticatedRoutes>
-          <AuthenticatedRoutes path="/home" component={ Dashboard }></AuthenticatedRoutes>
+          <AuthenticatedRoutes exact path="/" component={ Dashboard }></AuthenticatedRoutes>
           </div>
       </Router>
     )

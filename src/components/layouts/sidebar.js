@@ -12,7 +12,7 @@ render() {
             <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <li class="">
-               <Link to="/home">
+               <Link to="/">
                   <i className="fa fa-dashboard"></i> <span>Dashboard</span>
                   <span className="pull-right-container">
                   </span>
@@ -28,25 +28,6 @@ render() {
                </Link>
                
               </li>
-
-              <li className="">
-               <Link to="/login">
-                  <i className="fa fa-lock"></i> <span>Login</span>
-                  <span className="pull-right-container">
-                  </span>
-               </Link>
-               
-              </li>
-
-              <li className="">
-               <Link to="/register">
-                  <i className="fa fa-pencil"></i> <span>Register</span>
-                  <span className="pull-right-container">
-                  </span>
-               </Link>
-               
-              </li>
-              
              
               <li class="header">OTHERS</li>
             <li class="treeview">
