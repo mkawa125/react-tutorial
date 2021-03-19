@@ -11,16 +11,16 @@ class Login extends Component {
   constructor(props){
         super(props);
         this.state = {
-            email : '',
+            username : '',
             password: '',
         }
          this.logout = this.logout.bind(this)
   }
   onSubmit(e){
         e.preventDefault();
-        const {email , password} = this.state ;
-        axios.post('http://127.0.0.1:8000/api/v1/login', {
-            email, 
+        const {username , password} = this.state ;
+        axios.post('http://127.0.0.1:4007/users/authenticate', {
+            username,
             password
           })
           .then(response=> {
@@ -31,7 +31,7 @@ class Login extends Component {
             
           })
           .catch(error=> {
-            this.refs.email.value="";
+            this.refs.username.value="";
             this.refs.password.value="";
             this.setState({err: true});
           });
@@ -73,13 +73,13 @@ render() {
                      
                 <form  className="form-horizontal" method="POST" onSubmit= {this.onSubmit.bind(this)}> 
                     <div className="form-group">
-                        <label htmlFor="email">Username or Email</label>
+                        <label htmlFor="username">Username or Email</label>
                         <input
-                            type="email"
-                            name="email"
-                            id="email"
+                            type="username"
+                            name="username"
+                            id="username"
                             autoFocus
-                            ref="email"
+                            ref="username"
                             placeholder="Username or Email"
                             className="form-control"
                               onChange={this.onChange.bind(this)}  required  />
