@@ -26,8 +26,7 @@ render() {
       <Header></Header>
       <Sidebar></Sidebar>
       <Content></Content>
-    </div>
-      
+    </div> 
   );
 }
 }
