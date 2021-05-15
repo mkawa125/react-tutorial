@@ -46,7 +46,7 @@ class Login extends Component {
      
 render() {
   let error = this.state.err ;
-        let msg = (!error) ? 'Login Successful' : 'Wrong Credentials' ;
+        let msg = (!error) ? 'Login Successful' : 'Invalid username or password' ;
         let name = (!error) ? 'alert alert-success' : 'alert alert-danger' ;
     
   return (
@@ -66,7 +66,7 @@ render() {
 
                   <div className="form-body">
                     <div className="row">
-                    {error !== undefined && <div className={name} role="alert">{msg}</div>}
+                    {/* {error !== undefined && <div className={name} role="alert">{msg}</div>} */}
                     </div>
                      
                 <form  className="form-horizontal" method="POST" onSubmit= {this.onSubmit.bind(this)}> 
@@ -81,6 +81,8 @@ render() {
                             placeholder="Username or Email"
                             className="form-control"
                               onChange={this.onChange.bind(this)}  required  />
+                            
+                            {error !== undefined && <div className="text text-danger"><strong>{msg}</strong></div>}
                     </div>
 
                     <div className="form-group">
