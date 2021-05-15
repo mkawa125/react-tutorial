@@ -17,7 +17,7 @@ class Login extends Component {
   onSubmit(e){
         e.preventDefault();
         const {username , password} = this.state ;
-        axios.post('http://127.0.0.1:4007/users/authenticate', {
+        axios.post('http://localhost:5000/api/users/login-user', {
             username,
             password
           })
@@ -29,8 +29,8 @@ class Login extends Component {
             
           })
           .catch(error=> {
-            this.refs.username.value="";
-            this.refs.password.value="";
+            this.refs.username.value=username;
+            this.refs.password.value=password;
             this.setState({err: true});
           });
      }
