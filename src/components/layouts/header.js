@@ -30,8 +30,8 @@ class Header extends Component
                     <ul className="nav navbar-nav">
                         <li className="dropdown notifications-menu">
                         <a href="!#" className="dropdown-toggle" data-toggle="dropdown">
-                        <i className="fa fa-bell-o"></i>
-                        <span className="label label-warning">10</span>
+                        {/* <i className="fa fa-bell-o"></i> */}
+                        {/* <span className="label label-warning">10</span> */}
                         </a>
                         <ul className="dropdown-menu">
                         <li className="header">You have 10 notifications</li>
@@ -50,13 +50,13 @@ class Header extends Component
                     
                     <li className="dropdown user user-menu">
                         <a href="!#" className="dropdown-toggle" data-toggle="dropdown">
-                        <span className="hidden-xs">Alexander Pierce</span>
+                        <span className="hidden-xs">Dahabu Saidi</span>
                         </a>
                         <ul className="dropdown-menu">
                         <li className="user-header">
 
                             <p>
-                            Alexander Pierce - Web Developer
+                            Dahabu Saidi - Web Developer
                             <small>Member since Nov. 2012</small>
                             </p>
                         </li>

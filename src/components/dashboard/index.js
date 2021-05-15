@@ -18,9 +18,9 @@ render() {
       <h1>
         Dashboard
       </h1>
-      <ol className="breadcrumb">
-        <li> <Link to="/"> <i className="fa fa-dashboard"></i> Home</Link></li>
-      </ol>
+      <span className="breadcrumb-link">
+        <Link to="/">Home</Link>
+      </span>
     </section>
 
     <section className="content">
