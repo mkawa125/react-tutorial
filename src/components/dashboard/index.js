@@ -6,8 +6,6 @@ import {
 import Header from '../../components/layouts/header'
 import Sidebar from '../../components/layouts/sidebar'
 
-
-
 class Dashboard extends Component {
   
 render() {
@@ -34,8 +32,9 @@ render() {
         </div>
       </div>      
     </section>
-            </div>
+   </div>
   );
 }
+
 }
 export default Dashboard;
