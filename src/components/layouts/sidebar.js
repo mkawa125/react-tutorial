@@ -22,7 +22,7 @@ render() {
               
               <li className="">
                <Link to="/users">
-                  <i className="fa fa-users"></i> <span>Users Management</span>
+                  <i className="fa fa-users"></i> <span>Users</span>
                   <span className="pull-right-container">
                   </span>
                </Link>
