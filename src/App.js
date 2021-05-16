@@ -16,6 +16,7 @@ import Register from './components/auth/register';
 // import Sidebar from './components/layouts/sidebar'
 import Dashboard from './components/dashboard/index'
 import Users from './components/users/index';
+import AddUser from "./components/users/create";
 import AuthenticatedRoutes from './routes/privateRoutes'
 
 
@@ -46,7 +47,8 @@ class App extends Component
         <div>
           <Route path='/login' render={ props => <Login { ...props} /> }></Route>
           <Route  path='/register' component={ Register }></Route>
-          <AuthenticatedRoutes  path='/users' component={ Users }></AuthenticatedRoutes>
+          <AuthenticatedRoutes exact  path='/users' component={ Users }></AuthenticatedRoutes>
+          <AuthenticatedRoutes  path='/users/add-new-user' component={ AddUser }></AuthenticatedRoutes>
           <AuthenticatedRoutes exact path="/" component={ Dashboard }></AuthenticatedRoutes>
           </div>
       </Router>
