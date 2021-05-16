@@ -5,69 +5,62 @@ import {
 import '../../public/css/auth.css'
 import Header from '../../components/layouts/header'
 import Sidebar from '../../components/layouts/sidebar'
+import axios from 'axios';
 
-const TableHeader = () => {
+const Table = ({ users }) => {
   return (
-    <thead className="thead-dark">
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Location</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-  )
-}
-
-const TableBody = (props) => {
-    return (
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Dahabu Saidi</td>
-                <td>SOftware Engineer</td>
-                <td>dahabusaidi@gmail.com</td>
-                <td>+255717495198</td>
-                <td>Dar es salaam</td>
-                <td>
-                    <button className="btn btn-primary btn-sm">
-                        <i className="fa fa-eye"></i>
-                    </button>
-                    
-                </td>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Username</th>
+          <th>role</th>
+          <th>UserID</th>
+          <th>Date Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        { (users.length > 0) ? users.map( (user, index) => {
+           return (
+            <tr key={ index }>
+              <td>{ user.name }</td>
+              <td>{ user.email }</td>
+              <td>{ user.username }</td>
+              <td>{ user.role }</td>
+              <td>{ user._id }</td>
+              <td>{ user.createdAt }</td>
             </tr>
-
-            <tr>
-                <td>8</td>
-                <td>Glory Mushi</td>
-                <td>Class Mate</td>
-                <td>dahabusaidi@gmail.com</td>
-                <td>+255717495198</td>
-                <td>Dar es salaam</td>
-                <td>
-                    <button className="btn btn-primary btn-sm">
-                        <i className="fa fa-eye"></i>
-                    </button>
-                    
-                </td>
-            </tr>
-        </tbody>
-      
-    )
-  
-
+          )
+         }) : <tr><td colSpan="5">Loading...</td></tr> }
+      </tbody>
+    </table>
+  );
 }
 
 class Users extends Component
 {
+    constructor(props) {
+      super(props);
+      this.state = {
+        users: []
+      }
+    }
+
+    componentDidMount() {
+      axios.get('http://localhost:5000/api/users/')
+          .then( response => {
+            this.setState({ 'users': response.data });
+            console.log(this.state.users)
+          })
+          .catch(error=> {
+            this.setState({err: true});
+          });
+    }
+
     render ()
     {
         return (
-          
-            
             <div className="content-wrapper">
                 <Header></Header>
                 <Sidebar></Sidebar>
@@ -86,14 +79,13 @@ class Users extends Component
         <div className="col-md-10 col-md-offset-1 main-content">
           <div className="col-md-12 users">
             <strong>
-              List Of Users
+              List Of Users 
             </strong>
             <button className="btn btn-default add-user float-right"> 
               <Link to="/create-new-user">Add New User</Link>
             </button>
             <table className="table table-sm users-table table-bordered">
-            <TableHeader/>
-            <TableBody/>
+            <Table users={ this.state.users }/>
             </table>  
           </div>
         </div>

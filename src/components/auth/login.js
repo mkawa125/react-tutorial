@@ -17,7 +17,7 @@ class Login extends Component {
   onSubmit(e){
         e.preventDefault();
         const {username , password} = this.state ;
-        axios.post('http://localhost:5000/api/users/login-user', {
+        axios.post('http://localhost:5000/api/auth/login-user', {
             username,
             password
           })
