@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {
   Link
 } from 'react-router-dom';
+import '../../public/css/auth.css'
 import Header from '../../components/layouts/header'
 import Sidebar from '../../components/layouts/sidebar'
 
@@ -74,10 +75,12 @@ class Users extends Component
       <h1>
         Users
       </h1>
-      <ol className="breadcrumb">
-        <li> <Link to="/"> <i className="fa fa-dashboard"></i> Home</Link></li>
-        <li className="active">Users</li>
-      </ol>
+      <span className="">
+        <span> <Link to="/">Home</Link></span>
+        <span className="active"> / Users</span>
+      </span>
+
+      <button className="btn btn-default add-user float-right"> <Link to="/users/add-new-user">Add New User</Link></button>
     </section>
 
     <section className="content">
@@ -92,8 +95,8 @@ class Users extends Component
         </div>
       </div>      
     </section>
-            </div>
-        )
+  </div>
+  )
   }
 }
 
