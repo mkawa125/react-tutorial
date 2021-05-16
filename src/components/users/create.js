@@ -86,7 +86,7 @@ render() {
                     <div className='col-md-8 col-md-offset-2 main-content'>
                         <div className="col-md-12">
                         
-                        <div className="login-head" >Create Account</div>
+                        <div className="create-user-head" >Add New User</div>
 
                         <div className="form-body">
                             <form  className="form-horizontal" method="POST" onSubmit= {this.onSubmit.bind(this)}>
