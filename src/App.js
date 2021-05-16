@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import
 {
   BrowserRouter as Router,
-  Route, withRouter
+  Route, withRouter, Switch
   
 } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ import Register from './components/auth/register';
 // import Sidebar from './components/layouts/sidebar'
 import Dashboard from './components/dashboard/index'
 import Users from './components/users/index';
-import AddUser from "./components/users/create";
+import CreateUser from "./components/users/create";
 import AuthenticatedRoutes from './routes/privateRoutes'
 
 
@@ -45,11 +45,39 @@ class App extends Component
     return (
       <Router>
         <div>
-          <Route path='/login' render={ props => <Login { ...props} /> }></Route>
-          <Route  path='/register' component={ Register }></Route>
-          <AuthenticatedRoutes exact  path='/users' component={ Users }></AuthenticatedRoutes>
-          <AuthenticatedRoutes  path='/users/add-new-user' component={ AddUser }></AuthenticatedRoutes>
-          <AuthenticatedRoutes exact path="/" component={ Dashboard }></AuthenticatedRoutes>
+          <Switch>
+            <Route 
+              path='/login'
+              name="User login" 
+              render={ 
+                  props => <Login { ...props} />
+                }
+            />
+
+            <Route  
+              path='/register'
+              name="Create New User" 
+              component={ Register }/>
+
+            <AuthenticatedRoutes 
+              exact  
+              path='/users' 
+              component={ Users }/>
+
+            <AuthenticatedRoutes
+              exact  
+              path='/create-new-user'
+              name="Create New User"
+              component={ CreateUser }/>
+
+            <AuthenticatedRoutes 
+              exact 
+              path="/"
+              name="Dashboard"
+              component={ Dashboard }/>
+
+            </Switch>
+
           </div>
       </Router>
     )

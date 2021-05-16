@@ -80,7 +80,7 @@ class Users extends Component
         <span className="active"> / Users</span>
       </span>
 
-      <button className="btn btn-default add-user float-right"> <Link to="/users/add-new-user">Add New User</Link></button>
+      <button className="btn btn-default add-user float-right"> <Link to="/create-new-user">Add New User</Link></button>
     </section>
 
     <section className="content">
