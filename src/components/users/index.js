@@ -79,17 +79,21 @@ class Users extends Component
         <span> <Link to="/">Home</Link></span>
         <span className="active"> / Users</span>
       </span>
-
-      <button className="btn btn-default add-user float-right"> <Link to="/create-new-user">Add New User</Link></button>
     </section>
 
     <section className="content">
       <div className="row">
-        <div className="col-md-12">
-          <div className="">
-            <table className="table table-sm table-borderless">
+        <div className="col-md-10 col-md-offset-1 main-content">
+          <div className="col-md-12 users">
+            <strong>
+              List Of Users
+            </strong>
+            <button className="btn btn-default add-user float-right"> 
+              <Link to="/create-new-user">Add New User</Link>
+            </button>
+            <table className="table table-sm users-table table-bordered">
             <TableHeader/>
-            <TableBody></TableBody>
+            <TableBody/>
             </table>  
           </div>
         </div>
