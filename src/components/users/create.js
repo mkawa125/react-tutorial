@@ -25,6 +25,8 @@ class Register extends Component {
 
     onSubmit(e){
       e.preventDefault();
+        
+        /** Create empty state */
         const {name, email, username, first_name, surname,  password, password_confirmation} = this.state ;
         axios.post('http://localhost:5000/api/users/register-user', {
             name,
