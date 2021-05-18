@@ -15,6 +15,8 @@ class Login extends Component {
          this.logout = this.logout.bind(this)
   }
   onSubmit(e){
+
+        /** Prevent submition before filling data */
         e.preventDefault();
         const {username , password} = this.state ;
         axios.post('http://localhost:5000/api/auth/login-user', {
