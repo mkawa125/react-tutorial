@@ -32,7 +32,7 @@ const Table = ({ users }) => {
               <td>{ user.createdAt }</td>
             </tr>
           )
-         }) : <tr><td colSpan="5">Loading...</td></tr> }
+         }) : <tr><td colSpan="5">Data Loading...</td></tr> }
       </tbody>
     </table>
   );
@@ -60,39 +60,39 @@ class Users extends Component
 
     render ()
     {
-        return (
-            <div className="content-wrapper">
-                <Header></Header>
-                <Sidebar></Sidebar>
-    <section className="content-header">
-      <h1>
-        Users
-      </h1>
-      <span className="">
-        <span> <Link to="/">Home</Link></span>
-        <span className="active"> / Users</span>
-      </span>
-    </section>
+      return (
+          <div className="content-wrapper">
+            <Header></Header>
+            <Sidebar></Sidebar>
+          <section className="content-header">
+            <h1>
+              Users
+            </h1>
+            <span className="">
+              <span> <Link to="/">Home</Link></span>
+              <span className="active"> / Users</span>
+            </span>
+          </section>
 
-    <section className="content">
-      <div className="row">
-        <div className="col-md-10 col-md-offset-1 main-content">
-          <div className="col-md-12 users">
-            <strong>
-              List Of Users 
-            </strong>
-            <button className="btn btn-default add-user float-right"> 
-              <Link to="/create-new-user">Add New User</Link>
-            </button>
-            <table className="table table-sm users-table table-bordered">
-            <Table users={ this.state.users }/>
-            </table>  
-          </div>
-        </div>
-      </div>      
-    </section>
-  </div>
-  )
+          <section className="content">
+            <div className="row">
+              <div className="col-md-10 col-md-offset-1 main-content">
+                <div className="col-md-12 users">
+                  <strong>
+                    List Of Users 
+                  </strong>
+                  <button className="btn btn-default add-user float-right"> 
+                    <Link to="/create-new-user">Add New User</Link>
+                  </button>
+                  <table className="table table-sm users-table table-bordered">
+                  <Table users={ this.state.users }/>
+                  </table>  
+                </div>
+              </div>
+            </div>      
+          </section>
+      </div>
+    )
   }
 }
 
