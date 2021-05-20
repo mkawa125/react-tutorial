@@ -15,7 +15,7 @@ const Table = ({ users }) => {
           <th>Name</th>
           <th>Email</th>
           <th>Username</th>
-          <th>role</th>
+          <th>Role</th>
           <th>UserID</th>
           <th>Date Created</th>
         </tr>
@@ -29,7 +29,7 @@ const Table = ({ users }) => {
               <td>{ user.username }</td>
               <td>{ user.role }</td>
               <td>{ user._id }</td>
-              <td>{ user.createdAt }</td>
+              <td>{ (new Date(user.createdAt)).toDateString() }</td>
             </tr>
           )
          }) : <tr><td colSpan="5">Data Loading...</td></tr> }
@@ -48,7 +48,7 @@ class Users extends Component
     };
 
     componentDidMount() {
-      
+
     const options = {
       headers: {
         'Authorization': `${localStorage.getItem("token")}`,
