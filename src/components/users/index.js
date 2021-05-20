@@ -53,10 +53,11 @@ class Users extends Component
 
     const options = {
       headers: {
-        'Authorization': 'Bearer ' + localStorage.getItem("token"),
+        'Authorization': `${localStorage.getItem("token")}`,
         'Accept': "Application/Json"
       }
     }
+    console.log(options);
       axios.get('http://localhost:5000/api/users/', options)
           .then( response => {
             this.setState({ 'users': response.data });
