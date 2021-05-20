@@ -45,16 +45,27 @@ class Users extends Component
       this.state = {
         users: []
       }
-    }
+    };
 
     componentDidMount() {
-      axios.get('http://localhost:5000/api/users/')
+
+    console.log(localStorage.getItem("token"))
+
+    const options = {
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem("token"),
+        'Accept': "Application/Json"
+      }
+    }
+      axios.get('http://localhost:5000/api/users/', options)
           .then( response => {
             this.setState({ 'users': response.data });
             console.log(this.state.users)
+            console.log(options)
           })
           .catch(error=> {
             this.setState({err: true});
+            console.log(options)
           });
     }
 
