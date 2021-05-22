@@ -18,6 +18,7 @@ const Table = ({ users }) => {
           <th>Role</th>
           <th>UserID</th>
           <th>Date Created</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -30,6 +31,11 @@ const Table = ({ users }) => {
               <td>{ user.role }</td>
               <td>{ user._id }</td>
               <td>{ (new Date(user.createdAt)).toDateString() }</td>
+              <td>
+                <button className="btn btn-success btn-sm" >Edit</button>
+                <button className="btn btn-primary btn-sm" >View</button>
+                <button className="btn btn-danger btn-sm" onClick={() => this.deleteUser(user._id)}>Delete</button>
+              </td>
             </tr>
           )
          }) : <tr><td colSpan="5">Data Loading...</td></tr> }
@@ -66,6 +72,24 @@ class Users extends Component
             console.log(options)
           });
     }
+
+    deleteUser(id){  
+      const options = {
+        headers: {
+          'Authorization': `${localStorage.getItem("token")}`,
+          'Accept': "Application/Json"
+        }
+      }
+      axios.delete(`http://localhost:5000/api/users/${id}`, options)
+        .then(res => {  
+          console.log(res);  
+          console.log(res.data);  
+      
+          const users = this.state.users.filter(user => user.id !== id);  
+          this.setState({ users });  
+        })  
+      
+    }  
 
     render ()
     {
